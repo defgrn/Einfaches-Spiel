@@ -31,17 +31,22 @@ public class GewinnController {
                 if (model.hatVerloren()) {
                     view.setRundenErgebnis("Verloren");
                     view.setGesamtPunkte(String.valueOf(model.getGesamtPunkte()));
-                    view.setEditAktiv(false);
+                    view.setEingabeAktiv(false);
+                    model.setGesamtPunkte(30);
+                    view.resetRunde();
                 } else if (model.hatGewonnen()) {
                     view.setRundenErgebnis("Gewonnen");
                     view.setGesamtPunkte(String.valueOf(model.getGesamtPunkte()));
-                    view.setEditAktiv(false);
+                    view.setEingabeAktiv(false);
+                    model.setGesamtPunkte(30);
+                    view.resetRunde();
                 } else {
                     view.setRundenErgebnis(ergebnisText);
                     view.setGesamtPunkte(String.valueOf(model.getGesamtPunkte()));
                 }
 
-
+                view.setEingabeAktiv(false);
+                view.setBtnErneutAktiv(true);
 
             } catch (NumberFormatException ex) {
                 view.setRundenErgebnis("Zahl eingeben");
@@ -52,8 +57,8 @@ public class GewinnController {
     private class NochEinmalListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            model.setGesamtPunkte(30);
-            view.resetRunde();
+            view.setEingabeAktiv(true);
+            view.setBtnErneutAktiv(false);
         }
     }
 }

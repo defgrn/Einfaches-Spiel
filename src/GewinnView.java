@@ -72,6 +72,7 @@ public class GewinnView extends JFrame {
 
         btnErneut = new JButton("Noch einmal!");
         btnErneut.setFont(new Font("SansSerif", Font.PLAIN, 16));
+        btnErneut.setEnabled(false);
         untenPanel.add(btnErneut);
 
         mainPanel.add(obenPanel, BorderLayout.NORTH);
@@ -97,13 +98,15 @@ public class GewinnView extends JFrame {
         labelGesamt.setText(text);
     }
 
-    public void setEditAktiv(boolean aktiv) {
-        tfSpieler.setEditable(aktiv);
+    public void setEingabeAktiv(boolean aktiv) {
+        tfSpieler.setEnabled(aktiv);
+    }
+
+    public void setBtnErneutAktiv(boolean aktiv) {
+        btnErneut.setEnabled(aktiv);
     }
 
     public void resetRunde() {
-        tfSpieler.setText("");
-        tfComputer.setText("");
         tfSpieler.setEditable(true);
         tfSpieler.requestFocus();
         setGesamtPunkte("30");
