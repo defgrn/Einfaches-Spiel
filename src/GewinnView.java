@@ -106,6 +106,7 @@ public class GewinnView extends JFrame {
         tfComputer.setText("");
         tfSpieler.setEditable(true);
         tfSpieler.requestFocus();
+        setGesamtPunkte("30");
     }
 
     public void addSpielerEingabeListener(ActionListener listener) {

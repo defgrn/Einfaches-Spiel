@@ -52,6 +52,7 @@ public class GewinnController {
     private class NochEinmalListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            model.setGesamtPunkte(30);
             view.resetRunde();
         }
     }

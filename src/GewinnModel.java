@@ -24,6 +24,8 @@ public class GewinnModel {
         return rundenErgebnis;
     }
 
+    public void setGesamtPunkte(int gesamtPunkte) { this.gesamtPunkte = gesamtPunkte; }
+
     public void berechneComputerZahl() {
         this.computerZahl = this.random.nextInt(9) + 1;
     }
