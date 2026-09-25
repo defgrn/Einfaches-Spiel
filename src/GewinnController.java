@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -39,6 +40,14 @@ public class GewinnController {
                 } else {
                     view.setRundenErgebnis(ergebnisText);
                     view.setGesamtPunkte(String.valueOf(model.getGesamtPunkte()));
+                }
+
+                if (model.hatGewonnen() || diff > 0) {
+                    view.setLabelFarbe(Color.GREEN);
+                } else if (model.hatVerloren() || diff < 0) {
+                    view.setLabelFarbe(Color.RED);
+                } else {
+                    view.setLabelFarbe(Color.WHITE);
                 }
 
 
