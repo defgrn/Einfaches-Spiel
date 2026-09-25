@@ -106,8 +106,14 @@ public class GewinnView extends JFrame {
         btnErneut.setEnabled(aktiv);
     }
 
+    public void setLabelFarbe(Color farbe) {
+        labelRunden.setBackground(farbe);
+        labelGesamt.setBackground(farbe);
+    }
+
     public void resetRunde() {
         tfSpieler.setEditable(true);
+        setLabelFarbe(Color.WHITE);
         tfSpieler.requestFocus();
         setGesamtPunkte("30");
     }
