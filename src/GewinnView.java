@@ -11,7 +11,7 @@ public class GewinnView extends JFrame {
     private final JButton btnErneut;
 
     public GewinnView() {
-        setTitle("Zahlen-Gewinnspiel (v1.0)");
+        setTitle("Zahlen-Gewinnspiel (Official Release)");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 350);
         setLocationRelativeTo(null);
